@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load static %}
+<div class="heading">Which groceries stores you can look up?</div>
+    <div class="cheapestgroceries">
+    	<div class="cgroceriesHolder">
+        	<div class="cgroceriesContent">
+            	<img src="{% static 'images/imgfreestone.jpg' %}" alt="" />
+                <h2>Freestone</h2>
+                <p>Freestone Produce is a family owned produce distributor located in the heart of 
+                    Northeast Calgary. Going on it’s 8th year serving the Calgary community, Freestone Produce 
+                    is a staple in Calgary’s produce market and rapidly growing in recognition and rapport. 
+                    Freestone Produce provides staple produce items to a wide variety of different food-based 
+                    establishments, as well as local Calgarians, looking for an affordable 
+                    price on quality produce. </p>
+            </div>
+        </div>
+        
+        <div class="cgroceriesHolder">
+        	<div class="cgroceriesContent">
+            	<img src="{% static 'images/imgsuperstore.jpg' %}" alt="" />
+                <h2>Real Canadian Superstore</h2>
+                <p> Real Canadian Superstore is launching a new campaign and brand 
+                    design that focuses on who we are as Canadians. Everything from the foods 
+                    from each other's cultures that we love, to our unique and diverse identities, 
+                    and even what’s in our shopping carts.</p>
+            </div>
+        </div>
+        
+        <div class="cgroceriesHolder">
+        	<div class="cgroceriesContent">
+            	<img src="{% static 'images/imgwalmart.png' %}"alt="" />
+                <h2>Walmart</h2>
+                <p>Walmart has been changing the face of retail since our first store opened
+                in 1962. We’ve continued to pursue ways to bring technology into retail to offer 
+                customers a seamless shopping experience. You can find a ton of items in a Walmart 
+                store, but as customers increasingly shop across digital and physical storefronts, 
+                we’ve made it easier for you to find what you need right at your fingertips.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="space"></div>
+    
+     <div class="cheapestgroceries">
+    	<div class="cgroceriesHolder">
+        	<div class="cgroceriesContent">
+            	<img src="{% static 'images/imgsafeway.png' %}" alt="" />
+                <h2>Safeway</h2>
+                <p>Safeway, Inc. is engaged in the food and drug retailing business in North America.
+                 It has an extensive network of distribution, manufacturing and food-processing 
+                 facilities to support the retail operations. Safeway provides full array of 
+                 grocery items, food and general merchandise and feature a variety of specialty 
+                 departments, such as bakery, delicatessen, floral and pharmacy, as well as 
+                 Starbucks coffee shops and fuel centers.</p>
+            </div>
+        </div>
+        
+        <div class="cgroceriesHolder">
+        	<div class="cgroceriesContent">
+            	<img src="{% static 'images/imgsaveonfood.png' %}" alt="" />
+                <h2>Save on food</h2>
+                <p>Oinim </p>
+            </div>
+        </div>
+        
+        <div class="cgroceriesHolder">
+        	<div class="imgmoneycart">
+            	<h3>Compare the price and save money!</h3>
+            </div>
+        </div>
+    </div>
+<div class="clear"></div>
+
+{% endblock content %}

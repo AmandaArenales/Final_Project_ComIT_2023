@@ -1,0 +1,170 @@
+﻿{% load static %}
+
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml/">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Cheapest Groceries</title>
+<!--<link href="css/style.css" rel="stylesheet" type="text/css" />-->
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+<div id="main"><!-- Main starts here -->
+<div id="header"><!-- Header starts here -->
+	<div class="searchBar">
+        <!--<div class="search">
+        	<div class="txt"><input type="text" /></div>
+            <div class="searchBt"><input type="button" value="search" /></div>
+        </div>--> 
+    	<div class="signIn"><a href="login/">sign in</a></div>
+        <div class="RegBtn">register</div>
+    </div>
+    
+    <div class="logo">
+    	<h1>Cheapest Groceries</h1>
+    </div>
+    
+    <div class="menu">
+    	<ul id="menu">
+        	<li class="home"><a href="#">home</a></li>
+            <li class="commit"><a href="#">search page</a></li>
+            <li class="contact"><a href="#">contact us</a></li>
+    	</ul>
+    </div>
+    <!--<div class="subs">
+    	<p>SUBCRIBE to RSS</p><img src="{% static 'images/rss.png' %}" alt="" />
+    </div>-->
+</div><!-- Header ends here -->
+
+<div class="clear"></div>
+
+<div id="contentTop"></div><!-- Content starts here -->
+<div id="content">
+	
+	<div class="welcomeHolder">
+
+    <div class="welcome">
+		<h1>Welcome to Cheapest Groceries</h1>
+        <p><em>This website has a goal to help you monitor the price of many procduts from 
+            several Calgary's goceries stores. You will be able save many and decide where you 
+            want to do your groceries. </em></p>  
+         <!--<p align="right"><input type="button" value="VIEW OUR PACKAGES" class="view" /></p> 
+         <div class="clear"></div>-->
+    </div>
+    <div class="welcomeImg">   
+        <img src="{% static 'images/imgwelcome.jpg' %}" alt="" />
+    </div>
+    <div class="welcomeBottom"></div>
+    </div>
+
+	<div class="heading">Which groceries stores you can look up?</div>
+    <div class="cheapestgroceries">
+    	<div class="cgroceriesHolder">
+        	<div class="cgroceriesContent">
+            	<img src="{% static 'images/imgfreestone.jpg' %}" alt="" />
+                <h2>Freestone</h2>
+                <p>Freestone Produce is a family owned produce distributor located in the heart of 
+                    Northeast Calgary. Going on it’s 8th year serving the Calgary community, Freestone Produce 
+                    is a staple in Calgary’s produce market and rapidly growing in recognition and rapport. 
+                    Freestone Produce provides staple produce items to a wide variety of different food-based 
+                    establishments, as well as local Calgarians, looking for an affordable 
+                    price on quality produce. </p>
+            </div>
+        </div>
+        
+        <div class="cgroceriesHolder">
+        	<div class="cgroceriesContent">
+            	<img src="{% static 'images/imgsuperstore.jpg' %}" alt="" />
+                <h2>Real Canadian Superstore</h2>
+                <p> Real Canadian Superstore is launching a new campaign and brand 
+                    design that focuses on who we are as Canadians. Everything from the foods 
+                    from each other's cultures that we love, to our unique and diverse identities, 
+                    and even what’s in our shopping carts.</p>
+            </div>
+        </div>
+        
+        <div class="cgroceriesHolder">
+        	<div class="cgroceriesContent">
+            	<img src="{% static 'images/imgwalmart.png' %}"alt="" />
+                <h2>Walmart</h2>
+                <p>Walmart has been changing the face of retail since our first store opened
+                in 1962. We’ve continued to pursue ways to bring technology into retail to offer 
+                customers a seamless shopping experience. You can find a ton of items in a Walmart 
+                store, but as customers increasingly shop across digital and physical storefronts, 
+                we’ve made it easier for you to find what you need right at your fingertips.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="space"></div>
+    
+     <div class="cheapestgroceries">
+    	<div class="cgroceriesHolder">
+        	<div class="cgroceriesContent">
+            	<img src="{% static 'images/imgsafeway.png' %}" alt="" />
+                <h2>Safeway</h2>
+                <p>Safeway, Inc. is engaged in the food and drug retailing business in North America.
+                 It has an extensive network of distribution, manufacturing and food-processing 
+                 facilities to support the retail operations. Safeway provides full array of 
+                 grocery items, food and general merchandise and feature a variety of specialty 
+                 departments, such as bakery, delicatessen, floral and pharmacy, as well as 
+                 Starbucks coffee shops and fuel centers.</p>
+            </div>
+        </div>
+        
+        <div class="cgroceriesHolder">
+        	<div class="cgroceriesContent">
+            	<img src="{% static 'images/imgsaveonfood.png' %}" alt="" />
+                <h2>Save on food</h2>
+                <p>Oinim </p>
+            </div>
+        </div>
+        
+        <div class="cgroceriesHolder">
+        	<div class="imgmoneycart">
+            	<h3>Compare the price and save money!</h3>
+            </div>
+        </div>
+    </div>
+<div class="clear"></div>
+
+<div class="hr"></div>
+<div class="space"></div>
+<div id="footer"><!-- Footer starts here -->
+
+<div class="contactHeading">Contact Us</div>
+<div class="footerHolder">
+	<div class="footerLeft">
+    	<p class="left">Address:</p>
+        <p class="right">123 Street St<br /> Calgary/AB<br /> Canada</p>
+    </div>
+    
+    <div class="footerRight">
+    	<p class="left">Phone: 1 800 300 0000  </p><br>
+        <p class="left">Fax: 1 800 300 0000 </p>
+        <p class="left">Email: cheapestgroceries@gmail.com </p>
+        <p class="left">Twitter: @cheapestgroceries</p>
+    </div>
+
+    <div class="clear"></div>
+</div>
+</div><!-- Footer ends here -->
+</div>
+<div id="contentBottom"></div><!-- Content ends here -->
+
+<div class="bottomHolder">
+    <p style="color:black; font-weight: bold">&#169; <a href="https://info.icopyright.net/" 
+        style="color:black; font-weight: bold">Copyright</a>. <script 
+        type="text/javascript">document.write(new Date().getFullYear());</script>. 
+        <a href="https://www.opensourcetemplates.org/index.html" style="color: black;"
+        >Open Source Website Templates</a>. All Rights Reserved. 
+        <a href="https://www.opensourcetemplates.org/terms.html" 
+        style="color:black">Terms</a> | 
+        <a href="https://www.opensourcetemplates.org/sitemap.html" 
+        style="color:black">Site Map</a> | <a href="https://themeruler.com/" 
+        style="color:black">More Themes</a></p>
+</div>
+</div><!-- Main ends here -->
+</body>
+</html>

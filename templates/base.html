@@ -1,0 +1,103 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml/">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Cheapest Groceries</title>
+<!--<link href="css/style.css" rel="stylesheet" type="text/css" />-->
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+<div id="main"><!-- Main starts here -->
+<div id="header"><!-- Header starts here -->
+	<div class="searchBar">
+        <!--<div class="search">
+        	<div class="txt"><input type="text" /></div>
+            <div class="searchBt"><input type="button" value="search" /></div>
+        </div>--> 
+    	<div class="signIn"><a href="login/">sign in</a></div>
+        <div class="RegBtn">register</div>
+    </div>
+    
+    <div class="logo">
+    	<h1>Cheapest Groceries</h1>
+    </div>
+    
+    <div class="menu">
+    	<ul id="menu">
+        	<li class="home"><a href="#">home</a></li>
+            <li class="commit"><a href="#">search page</a></li>
+            <li class="contact"><a href="#">contact us</a></li>
+    	</ul>
+    </div>
+    <!--<div class="subs">
+    	<p>SUBCRIBE to RSS</p><img src="{% static 'images/rss.png' %}" alt="" />
+    </div>-->
+</div><!-- Header ends here -->
+
+<div class="clear"></div>
+
+<div id="contentTop"></div><!-- Content starts here -->
+<div id="content">
+	
+	<div class="welcomeHolder">
+
+    <div class="welcome">
+		<h1>Welcome to Cheapest Groceries</h1>
+        <p><em>This website has a goal to help you monitor the price of many procduts from 
+            several Calgary's goceries stores. You will be able save many and decide where you 
+            want to do your groceries. </em></p>  
+         <!--<p align="right"><input type="button" value="VIEW OUR PACKAGES" class="view" /></p> 
+         <div class="clear"></div>-->
+    </div>
+    <div class="welcomeImg">   
+        <img src="{% static 'images/imgwelcome.jpg' %}" alt="" />
+    </div>
+    <div class="welcomeBottom"></div>
+    </div>
+
+	{% block content %}
+    replace 
+    {% endblock %}
+
+<div class="hr"></div>
+<div class="space"></div>
+<div id="footer"><!-- Footer starts here -->
+
+<div class="contactHeading">Contact Us</div>
+<div class="footerHolder">
+	<div class="footerLeft">
+    	<p class="left">Address:</p>
+        <p class="right">123 Street St<br /> Calgary/AB<br /> Canada</p>
+    </div>
+    
+    <div class="footerRight">
+    	<p class="left">Phone: 1 800 300 0000  </p><br>
+        <p class="left">Fax: 1 800 300 0000 </p>
+        <p class="left">Email: cheapestgroceries@gmail.com </p>
+        <p class="left">Twitter: @cheapestgroceries</p>
+    </div>
+
+    <div class="clear"></div>
+</div>
+</div><!-- Footer ends here -->
+</div>
+<div id="contentBottom"></div><!-- Content ends here -->
+
+<div class="bottomHolder">
+    <p style="color:black; font-weight: bold">&#169; <a href="https://info.icopyright.net/" 
+        style="color:black; font-weight: bold">Copyright</a>. <script 
+        type="text/javascript">document.write(new Date().getFullYear());</script>. 
+        <a href="https://www.opensourcetemplates.org/index.html" style="color: black;"
+        >Open Source Website Templates</a>. All Rights Reserved. 
+        <a href="https://www.opensourcetemplates.org/terms.html" 
+        style="color:black">Terms</a> | 
+        <a href="https://www.opensourcetemplates.org/sitemap.html" 
+        style="color:black">Site Map</a> | <a href="https://themeruler.com/" 
+        style="color:black">More Themes</a></p>
+</div>
+</div><!-- Main ends here -->
+</body>
+</html>
