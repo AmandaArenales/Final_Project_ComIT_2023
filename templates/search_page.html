@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Search Page| {% endblock %}
+
+{% block content %}
+    <h1 class="h3 font-weight-normal form-register-h1">Welcome to the search page</h1>{% csrf_token %}
+    
+    <h2 class="h1 font-weight-normal form-register-h2" >Products</h2>
+
+    
+        {% for product in newest_products %}
+            {% include 'list_item.html' %}
+        {% endfor %}
+   
+{% endblock %}

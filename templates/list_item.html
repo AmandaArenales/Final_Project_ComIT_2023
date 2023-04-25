@@ -1,0 +1,9 @@
+<div class="productHolder">
+    <figure>
+        <a href="{% url 'product' product.category.slug product.slug %}">
+        <img src="{{ product.get_thumbnail }}"></a>
+    </figure>
+    
+    <h class="product">{{ product.title }}</h> 
+
+</div>

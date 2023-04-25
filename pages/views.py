@@ -9,13 +9,6 @@ def home_view(request, *args, **kwargs):
     template = 'home.html',
     return render(request, template, context) #string of HTML code
 
-def login_view(request, *args, **kwargs):
-    print(args, kwargs)
-    print(request.user)
-    context = locals()
-    template = 'login.html',
-    return render(request, template, context) #string of HTML code
-
 def contact_view(request, *args, **kwargs):
     return HttpResponse('<h1>Contact Page<h1>') #string of HTML code
 

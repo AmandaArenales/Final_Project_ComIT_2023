@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if not request.user.is_authenticated %}
+    <h1 class="h3 mb-3 font-weight-normal form-register-h1" >Register</h1>
+
+    <form method="POST" class="form-register">{% csrf_token %}
+        {{form.as_p}} 
+    </form>
+    
+    <button class="btn" type="submit">Register</button>
+
+    {% if form.errors %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            There was an error with your form. Please check it again.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endif %}
+ 
+    <p>Already have an account? Please <a href="/login">Login</a></p>
+
+{% else %}
+    <p class="msglogout">You're already logged in and can not register. Would you like to <a href='/logout/'>logout</a>?</p>
+{% endif %}
+
+{% endblock content %}

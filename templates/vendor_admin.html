@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}Vendor admin| {% endblock %}
+
+{% block content %}
+    <div class="box">
+        <h1 class="h3 mb-3 font-weight-normal box-v-a">Vendor admin: {{ vendor.name }}
+        </h1>{% csrf_token %}
+    </div>
+
+    <div class="box">
+
+        {% if products %}
+       
+            <h2 class="font-weight-normal box-v-a">Your products</h2>
+    
+            <p class="p-v-a">Here are all products that you are selling: </p>
+
+            <table class="table-v-a center-t"> 
+                <thead class="table-fonth">
+                    <tr class="tr-v-a tr-v-a-h">
+                        <th class="th-td-v-a th-color">Title</th>
+                        <th class="th-td-v-a th-color">Price</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    {% for product in products %}
+                        <tr class="tr-v-a tr-v-a-h table-fontr">
+                            <td class="th-td-v-a"><a href="{% url 'product' product.category.slug product.slug %}">{{ product.title }}</a></td>
+                            <td class="th-td-v-a">${{ product.price }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        {% else %}
+            <p class="msglogout" style="font-style: italic; color: black;">You don't have any products yet.
+                Would like to add a new product?</p>
+    
+            <button id="myButton" class="btn-a-p" type="submit">Add product</button>
+    
+            <script type="text/javascript">
+                document.getElementById("myButton").onclick = function () {
+                    location.href = "{% url 'add_product' %}";
+                };
+            </script>
+
+            <p class="msglogout">Would you like to <a href="{% url 'logout' %}">logout</a>?</p>
+        
+        {% endif %}
+
+        <button id="myButton" class="btn-a-p" type="submit">Add product</button>
+    
+            <script type="text/javascript">
+                document.getElementById("myButton").onclick = function () {
+                    location.href = "{% url 'add_product' %}";
+                };
+            </script>
+
+
+    </div>
+
+{% endblock content %}

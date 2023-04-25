@@ -13,15 +13,51 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
+from django.conf import settings #for dynamic images
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 
 #own urls
-from pages.views import home_view, contact_view, login_view
+from accounts.views import (
+    login_view, 
+    logout_view,
+    register_view,
+    test_view
+)
+from pages.views import (
+    home_view, 
+    contact_view
+)
+
+from products.views import (
+    product,
+    category
+)
+
+from search_page.views import (
+    search_page
+)
+
+from vendor.views import (
+    become_vendor, 
+    vendor_admin,
+    add_product
+)
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('add_product/', add_product, name = 'add_product'), #own
+    path('become_vendor/', become_vendor, name = 'become_vendor'), #own
+    path('vendor_admin/', vendor_admin, name = 'vendor_admin'), #own
     path('', home_view, name = 'home'), #own
     path('contact/', contact_view), #own
-    path('login/', login_view), #own
-    path('admin/', admin.site.urls),
-]
+    path ('login/', login_view, name = 'login'), #own
+    path('logout/', logout_view, name = 'logout'), #own
+    path('register/', register_view, name = 'register'), #own
+    path('test/', test_view), #own
+    path('search_page/', search_page, name = 'search_page'), #own
+    path('<slug:category_slug>/<slug:product_slug>/', product, name = 'product'), #own
+    path('<slug:category_slug>/', category, name = 'category'), #own
+] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

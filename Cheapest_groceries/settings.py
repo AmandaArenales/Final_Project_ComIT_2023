@@ -15,8 +15,8 @@ import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 #BASE_DIR = os.path.dirname(os)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = Path(__file__).resolve().parent.parent #(<--correct)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -26,9 +26,13 @@ SECRET_KEY = 'django-insecure-#xy9)1&wuww=ah68vf4vj#&e4%es+0=i6q6skumc47mc2e5))9
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
 ALLOWED_HOSTS = []
 
+#changing the default login url. If you try to go to a 
+#page you don't have authentication, you will be redirect to this page
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'vendor_admin'
+LOGOUT_REDIRECT_URL = 'home'
 
 # Application definition
 
@@ -40,11 +44,17 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    #third party
+    #because I installed crispy forms I need this here:
+    #'crispy_forms', 
+    #'bootstrap4',
+    #'crispy_bootstrap4',
 
     #own
+    'accounts',
     'pages',
     'products',
+    'vendor',
+    'search_page',
 ]
 
 MIDDLEWARE = [
@@ -70,6 +80,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
+                #own
+                'products.context_processors.menu_categories',
             ],
         },
     },
@@ -84,7 +97,8 @@ WSGI_APPLICATION = 'Cheapest_groceries.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR  + '/db.sqlite3',
+        'NAME': BASE_DIR  / 'db.sqlite3'
+        #'NAME': BASE_DIR  / 'db.sqlite3', (<--new)
     }
 }
 
@@ -125,7 +139,14 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media/'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#because I installed crispy forms I need to define the layout crispy form will use:
+#CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
