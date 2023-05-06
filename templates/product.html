@@ -4,27 +4,41 @@
 
 {% block content %}
     
-    <div class="productview" >
+    <div class="productview">
         {% if product.image %}
-
             <h1>{{ product.title }}</h1>
             <figure class="image">
                 <img src="{{ product.get_thumbnail }}">
             </figure>
         {% endif %}
-        
+    </div>
+     
+    <div class="box">
+        <table class="table-v-a center-t"> 
+            <thead class="table-fonth">
+                <tr class="tr-v-a tr-v-a-h">
+                    <th class="th-td-v-a th-color">Grocery Store</th>
+                    <th class="th-td-v-a th-color">Price</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                {% for vendor,price in list_final.items %}
+                    <tr class="tr-v-a tr-v-a-h table-fontr">
+                        <td class="th-td-v-a"><a href="{% url 'product' product.category.slug product.slug %}">{{ vendor }}</a></td>
+                        <td class="th-td-v-a">${{ price }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
 
-        <h1 class="title">{{ product.title}}, ${{product.price }}</h1>
-
-        <p class="mb-6"><span class="tag is-dark">{{ product.vendor.name }}</span></p>
-
-        <p>{{ product.description }}</p>
+        <br>
+        <br>
     </div>
 
     <hr class="rounded">
 
     {% if other_products %}
-    
         <div class="column is-12">
             <h2 class="h1 font-weight-normal form-register-h2">Other products</h2>
         </div>
@@ -32,5 +46,6 @@
         {% for product in other_products %}
             {% include 'list_item.html' %}
         {% endfor %}
+        
     {% endif %}
 {% endblock %}

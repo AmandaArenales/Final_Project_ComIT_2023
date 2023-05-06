@@ -19,14 +19,14 @@ class Category(models.Model):
         return self.title
     
 class Product(models.Model):
-    category   = models.ForeignKey(Category, related_name = 'products', on_delete = models.CASCADE)
-    vendor     = models.ForeignKey(Vendor, related_name = 'products', on_delete = models.CASCADE)
-    title      = models.CharField(max_length = 200)
-    slug       = models.SlugField(max_length = 200, unique = True) #used in the urls
-    price      = models.DecimalField(max_digits = 6, decimal_places = 2, blank=True, default = 0.0)
-    date_added = models.DateTimeField(auto_now_add = True)
-    image      = models.ImageField(upload_to = 'uploads/', blank = True, null = True)
-    thumbnail  = models.ImageField(upload_to = 'uploads/', blank = True, null = True)
+    category    = models.ForeignKey(Category, related_name = 'products', on_delete = models.CASCADE)
+    vendor      = models.ForeignKey(Vendor, related_name = 'products', on_delete = models.CASCADE)
+    title       = models.CharField(max_length = 200)
+    slug        = models.SlugField(max_length = 200, unique = True) #used in the urls
+    price       = models.DecimalField(max_digits = 6, decimal_places = 2, blank=True, default = 0.0)
+    date_added  = models.DateTimeField(auto_now_add = True)
+    image       = models.ImageField(upload_to = 'uploads/', blank = True, null = True)
+    thumbnail   = models.ImageField(upload_to = 'uploads/', blank = True, null = True)
 
     class Meta:
         ordering = ['-date_added'] #data in descent order

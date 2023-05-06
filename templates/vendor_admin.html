@@ -24,7 +24,7 @@
                 </thead>
                 
                 <tbody>
-                    {% for product in products %}
+                    {% for product in products|dictsort:"title" %}
                         <tr class="tr-v-a tr-v-a-h table-fontr">
                             <td class="th-td-v-a"><a href="{% url 'product' product.category.slug product.slug %}">{{ product.title }}</a></td>
                             <td class="th-td-v-a">${{ product.price }}</td>
@@ -51,13 +51,10 @@
 
         <button id="myButton" class="btn-a-p" type="submit">Add product</button>
     
-            <script type="text/javascript">
-                document.getElementById("myButton").onclick = function () {
-                    location.href = "{% url 'add_product' %}";
-                };
-            </script>
-
-
+        <script type="text/javascript">
+            document.getElementById("myButton").onclick = function () {
+                location.href = "{% url 'add_product' %}";
+            };
+        </script>
     </div>
-
 {% endblock content %}

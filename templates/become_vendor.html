@@ -2,48 +2,44 @@
 {% block title %}Become vendor | {% endblock %}
 
 {% block content %}
-{% if not request.user.is_authenticated %}
+    {% if not request.user.is_authenticated %}
+        <h1 class="font-weight-normal h1-b-v">Become vendor</h1>{% csrf_token %}
 
-    <h1 class="font-weight-normal h1-b-v">Become vendor</h1>{% csrf_token %}
+        <form method="POST" class="form-b-v">{% csrf_token %}
+        
+            {{form.as_p}}
+        
+            <div class="form-b-v-checkbox">
+                <label>
+                <input value="remember-me" type="checkbox"> Remember me
+                </label>
+            </div>
 
-    <form method="POST" class="form-b-v">{% csrf_token %}
-    
-        {{form.as_p}}
-       
-        <div class="form-b-v-checkbox">
-            <label>
-            <input value="remember-me" type="checkbox"> Remember me
-            </label>
-        </div>
+            {% if error %}
+                <p class="loginerror">{{ error }}</p>
+            {% endif %}     
+                
+            <button class="btn-b-v btn-a" type="submit">Login</button>
+        </form>
 
-        {% if error %}
-            <p class="loginerror">{{ error }}</p>
-        {% endif %}     
-            
-        <button class="btn-b-v btn-a" type="submit">Login</button>
-    </form>
+        <br/>
+        <p class="msgregister">Already have an account? Please <a href="/login">login.</a></p>
+        <br/>
 
-    <br/>
-    <p class="msgregister">Already have an account? Please <a href="/login">login.</a></p>
-    <br/>
+    {% else %}
+        {% if user is vendor  %}
+            <form method="POST" class="form-logout">{% csrf_token %}
+                <p>You're already logged as a vendor. Would you like to
+                    access vendor admin page</a>?</p>
+            </form>
 
-{% else %}
+            <button id="myButton" class="btn-v-a" type="submit">Vendor admin page</button>
 
-    <form method="POST" class="form-logout">{% csrf_token %}
-        <p>You're already logged in as a vendor. Would you like to
-            access vendor admin page</a>?</p>
-    </form>
-
-    <button id="myButton" class="btn-v-a" type="submit">Vendor admin page</button>
-
-    <script type="text/javascript">
-        document.getElementById("myButton").onclick = function () {
-            location.href = "{% url 'vendor_admin' %}";
-        };
-    </script>
-    
-
-
-{% endif %}
-
+            <script type="text/javascript">
+                document.getElementById("myButton").onclick = function () {
+                    location.href = "{% url 'vendor_admin' %}";
+                };
+            </script>
+        {% endif %}
+    {% endif %}
 {% endblock content %}

@@ -36,8 +36,9 @@ from products.views import (
     category
 )
 
+
 from search_page.views import (
-    search_page
+   search_page
 )
 
 from vendor.views import (
@@ -51,13 +52,13 @@ urlpatterns = [
     path('add_product/', add_product, name = 'add_product'), #own
     path('become_vendor/', become_vendor, name = 'become_vendor'), #own
     path('vendor_admin/', vendor_admin, name = 'vendor_admin'), #own
+    path('search_page/', search_page, name = 'search_page'), #ownwn
     path('', home_view, name = 'home'), #own
     path('contact/', contact_view), #own
     path ('login/', login_view, name = 'login'), #own
     path('logout/', logout_view, name = 'logout'), #own
     path('register/', register_view, name = 'register'), #own
     path('test/', test_view), #own
-    path('search_page/', search_page, name = 'search_page'), #own
     path('<slug:category_slug>/<slug:product_slug>/', product, name = 'product'), #own
     path('<slug:category_slug>/', category, name = 'category'), #own
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

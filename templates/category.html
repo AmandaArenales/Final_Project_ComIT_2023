@@ -6,10 +6,8 @@
     <h1 class="h3 font-weight-normal form-register-h1">{{ category.title }}</h1>{% csrf_token %}
     
     <h2 class="h1 font-weight-normal form-register-h2" >{{ category.title }}</h2>
-
     
-        {% for product in category.product.all %}
-            {% include 'list_item.html' %}
-        {% endfor %}
-
+    {% for product in category.product.all %}
+        {% include 'list_item.html' %}
+    {% endfor %}
 {% endblock %}

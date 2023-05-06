@@ -7,9 +7,7 @@
     
     <h2 class="h1 font-weight-normal form-register-h2" >Products</h2>
 
-    
-        {% for product in newest_products %}
-            {% include 'list_item.html' %}
-        {% endfor %}
-   
+    {% for product in products_distinct %}
+        {% include 'list_item.html' %}
+    {% endfor %} 
 {% endblock %}
