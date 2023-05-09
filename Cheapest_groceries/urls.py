@@ -59,6 +59,6 @@ urlpatterns = [
     path('logout/', logout_view, name = 'logout'), #own
     path('register/', register_view, name = 'register'), #own
     path('test/', test_view), #own
-    path('<slug:category_slug>/<slug:product_slug>/', product, name = 'product'), #own
     path('<slug:category_slug>/', category, name = 'category'), #own
+    path('<slug:category_slug>/<slug:product_slug>/', product, name = 'product'), #own
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

@@ -28,7 +28,7 @@ body{
 #main{
 	width:1200px;
 	margin:0px auto;
-	height:1400px;
+	/*height:1400px;*/
 }
 
 #border-register{
@@ -54,7 +54,6 @@ width:100%;
 .signIn{
 	background:transparent url(../images/signInBg.png) no-repeat top center;
 	width:102px;
-	height:25px;
 	color:#ffffff;
 	text-transform:uppercase;
 	text-align:center;
@@ -75,7 +74,6 @@ width:100%;
 .RegBtn{
 	background:transparent url(../images/signInBg.png) no-repeat top center;
 	width:102px;
-	height:25px;
 	color:#ffffff;
 	text-transform:uppercase;
 	text-align:center;
@@ -232,7 +230,7 @@ padding:0px 10px;
 
 #contentBottom{
 background:url(../images/contentBottom.png) no-repeat bottom;
-height:10px;
+min-height:10px;
 width:988px;
 margin:0px auto;
 padding:0px 10px;
@@ -409,7 +407,7 @@ background: url(../images/imgcontactus.png) no-repeat center bottom;
 font-size: 17px;
 font-style: italic;
 font-weight: bold;
-height: 58px;
+/*height: 58px;*/
 padding: 35px 50px;
 margin-top: -10px;
 }

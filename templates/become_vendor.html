@@ -3,7 +3,7 @@
 
 {% block content %}
     {% if not request.user.is_authenticated %}
-        <h1 class="font-weight-normal h1-b-v">Become vendor</h1>{% csrf_token %}
+        <h1 class="font-weight-normal h1-b-v">Become a vendor</h1>{% csrf_token %}
 
         <form method="POST" class="form-b-v">{% csrf_token %}
         
