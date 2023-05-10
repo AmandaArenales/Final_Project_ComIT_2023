@@ -2,17 +2,29 @@
 {% block title %}Add product | {% endblock %}
 
 {% block content %}
-    <h1 class="font-weight-normal h1-b-v">Add product</h1>{% csrf_token %}
+    {% if user.is_authenticated and user.is_staff %}
 
-    <form method="POST" enctype="multipart/form-data">{% csrf_token %}
-        <div class="form-a-p">
-            {{ form.as_p }}
+        <div class="heading">
+            Let's add new products here
         </div>
-       
-        {% if error %}
-            <p class="loginerror">{{ error }}</p>
-        {% endif %}     
-            
-        <button class="btn-a-p btn-a" type="submit">Submit</button>
-    </form>
+
+        <h1 class="font-weight-normal h1-b-v">Add product</h1>{% csrf_token %}
+
+        <form method="POST" enctype="multipart/form-data">{% csrf_token %}
+            <div class="form-a-p">
+                {{ form.as_p }}
+            </div>
+        
+            {% if error %}
+                <p class="loginerror">{{ error }}</p>
+            {% endif %}     
+                
+            <button class="btn-a-p btn-a" type="submit">Submit</button>
+        </form>
+    {% else %}
+        <div class="heading">
+            Hello {{ user }}
+        </div>
+        <p class="p-logout">You're not a vendor and you can't add any new product.</p>
+    {% endif %}
 {% endblock content %}

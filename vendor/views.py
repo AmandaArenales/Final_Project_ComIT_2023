@@ -15,11 +15,13 @@ def become_vendor(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
+            user.is_staff = True
+            user.save()
             login(request, user)
             Vendor.objects.create(name = user.username, created_by = user)
             return redirect('vendor_admin')   
     else:
-        form = UserCreationForm()   
+        form = UserCreationForm() 
     context = {'form': form}
     template = 'become_vendor.html'
     return render(request, template, context)
@@ -28,6 +30,7 @@ def become_vendor(request):
 @login_required
 def vendor_admin(request):
     vendor = request.user.vendor
+    print(vendor.name)
     products = vendor.products.all()
     context = {'vendor': vendor, 'products': products}
     template = 'vendor_admin.html'

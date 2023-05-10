@@ -1,9 +1,13 @@
 {% extends "base.html" %}
-{% block title %}Become vendor | {% endblock %}
+{% block title %}Become a vendor | {% endblock %}
 
 {% block content %}
     {% if not request.user.is_authenticated %}
-        <h1 class="font-weight-normal h1-b-v">Become a vendor</h1>{% csrf_token %}
+        <div class="heading">
+            Would like to become a vendor? 
+        </div>
+    
+        <h1 class="font-weight-normal h1-b-v">Register here:</h1>{% csrf_token %}
 
         <form method="POST" class="form-b-v">{% csrf_token %}
         
@@ -27,10 +31,14 @@
         <br/>
 
     {% else %}
-        {% if user is vendor  %}
-            <form method="POST" class="form-logout">{% csrf_token %}
-                <p>You're already logged as a vendor. Would you like to
-                    access vendor admin page</a>?</p>
+        {% if user.is_authenticated and user.is_staff and not user.is_superuser %}
+            <div class="heading">
+                Hello {{ user }}
+            </div>
+
+            <form method="POST" class="messages">{% csrf_token %}
+                <p> You're already logged as a vendor. Would you like to
+                    access vendor admin page?</p>
             </form>
 
             <button id="myButton" class="btn-v-a" type="submit">Vendor admin page</button>
@@ -40,6 +48,18 @@
                     location.href = "{% url 'vendor_admin' %}";
                 };
             </script>
+        {% else %}
+                <div class="heading">
+                    Hello {{ user }}
+                </div>
+
+            <form method="POST" class="messages">{% csrf_token %}    
+                <p>You're not a vendor. Would you like to
+                    become a vendor?</p>
+            </form>
+
+
+
         {% endif %}
     {% endif %}
 {% endblock content %}

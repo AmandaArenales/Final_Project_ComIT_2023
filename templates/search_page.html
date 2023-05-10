@@ -3,11 +3,13 @@
 {% block title %}Search Page| {% endblock %}
 
 {% block content %}
-    <h1 class="h3 font-weight-normal form-register-h1">Welcome to the search page</h1>{% csrf_token %}
+    <div class="heading">Welcome to the search page</div>    
+
+    <!--<h1 class="h3 font-weight-normal form-register-h1">Welcome to the search page</h1>{% csrf_token %}-->
     
     <h2 class="h1 font-weight-normal form-register-h2" >Products</h2>
 
     {% for product in products_distinct %}
         {% include 'list_item.html' %}
-    {% endfor %} 
+    {% endfor %}
 {% endblock %}

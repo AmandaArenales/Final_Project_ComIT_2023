@@ -21,3 +21,6 @@ def search_page(request):
     return render (request, template, context)
 
 
+
+
+
