@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-#xy9)1&wuww=ah68vf4vj#&e4%es+0=i6q6skumc47mc2e5))9
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['54.89.208.23', '*']
 
 #changing the default login url. If you try to go to a 
 #page you don't have authentication, you will be redirect to this page
