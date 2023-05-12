@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
+from decouple import config
 from pathlib import Path
 import os
 
@@ -22,11 +23,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent #(<--correct)
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-#xy9)1&wuww=ah68vf4vj#&e4%es+0=i6q6skumc47mc2e5))9'
-
+SECRET_KEY = os.environ.get("DJANGO_DEBUG", "default_key")
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-ALLOWED_HOSTS = ['54.89.208.23', '*']
+DEBUG = os.environ.get("DJANGO_DEBUG", "default_key")
+ALLOWED_HOSTS = config('DJANGO_ALLOWED_HOSTS', cast=lambda v: [s.strip() for s in v.split(',')])
 
 #changing the default login url. If you try to go to a 
 #page you don't have authentication, you will be redirect to this page
