@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from decouple import config
 from pathlib import Path
+
+import environ
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -55,6 +57,7 @@ INSTALLED_APPS = [
     'products',
     'vendor',
     'search_page',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -94,10 +97,28 @@ WSGI_APPLICATION = 'Cheapest_groceries.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
+"""DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR  / 'db.sqlite3'
+        #'NAME': BASE_DIR  / 'db.sqlite3', (<--new)
+    }
+}"""
+
+
+env = environ.Env()
+#reading .env file
+
+environ.Env.read_env()
+
+DATABASES = {
+    'default': {
+        'ENGINE':'django.db.backends.mysql',
+        'NAME':env("DATABASE_NAME"),
+        'HOST': env("DATABASE_HOST"),
+        'USER':env("DATABASE_USER"),
+        'PASSWORD':env("DATABASE_PASSWORD"),
+        'PORT':env("DATABASE_PORT"),
         #'NAME': BASE_DIR  / 'db.sqlite3', (<--new)
     }
 }
@@ -145,7 +166,22 @@ MEDIA_ROOT = BASE_DIR / 'media/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+#DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#AWS S3 settings
+
+#Django to use the S3 storage backend for static files
+"""DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+
+AWS_S3_ACCESS_KEY_ID = os.environ.get ("DJANGO_AWS_S3_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = os.environ.get("DJANGO_AWS_SECRET_ACCESS_KEY")
+AWS_STORAGE_BUCKET_NAME = os.environ.get("DJANGO_AWS_STORAGE_BUCKET_NAME", "default_bucket_name")
+
+AWS_S3_REGION_NAME = 'us-east-1'
+
+AWS_QUERYSTRING_AUTH = False"""
 
 #because I installed crispy forms I need to define the layout crispy form will use:
 #CRISPY_TEMPLATE_PACK = 'bootstrap4'

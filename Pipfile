@@ -7,6 +7,12 @@ name = "pypi"
 django = "*"
 pillow = "*"
 python-decouple = "*"
+django-storages = "*"
+boto3 = "*"
+mysqlclient = "*"
+pymysql = "*"
+environ = "*"
+django-environ = "*"
 
 [dev-packages]
 
