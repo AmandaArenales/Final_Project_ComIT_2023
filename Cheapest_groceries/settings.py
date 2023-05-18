@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from decouple import config
 from pathlib import Path
 
-import environ
+#import environ
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -57,7 +57,6 @@ INSTALLED_APPS = [
     'products',
     'vendor',
     'search_page',
-    'storages',
 ]
 
 MIDDLEWARE = [
@@ -97,16 +96,16 @@ WSGI_APPLICATION = 'Cheapest_groceries.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-"""DATABASES = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR  / 'db.sqlite3'
         #'NAME': BASE_DIR  / 'db.sqlite3', (<--new)
     }
-}"""
+}
 
 
-env = environ.Env()
+"""env = environ.Env()
 #reading .env file
 
 environ.Env.read_env()
@@ -122,7 +121,7 @@ DATABASES = {
         #'NAME': BASE_DIR  / 'db.sqlite3', (<--new)
     }
 }
-
+"""
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
