@@ -8,12 +8,10 @@ from vendor.models import Vendor
 
 def product(request, category_slug, product_slug):
     product = get_object_or_404(Product, category__slug = category_slug, slug = product_slug)
-    print(product_slug)
 
     title = product_slug.split('_')[0].capitalize()
     list_products =  Product.objects.filter(title=product).values()
-    print(list_products)
-
+    
     list_id = []
     list_price = []
     list_final = {}
@@ -24,8 +22,7 @@ def product(request, category_slug, product_slug):
 
     vendor_name = []
     vendor_id =  Vendor.objects.filter(pk__in=list_id)
-    print(vendor_id)
-
+  
     for n in vendor_id:
         vendor_name.append(n.name)
 

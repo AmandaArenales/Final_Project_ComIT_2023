@@ -45,7 +45,7 @@ class Product(models.Model):
             else:
                 return 'https://via.placeholder.com/240x180.jpg'
         
-    def make_thumbnail(self, image, size = (300, 200)):
+    def make_thumbnail(self, image, size = (290, 200)):
         img = Image.open(image) #create a image object
         img.convert('RGB')
         img.thumbnail(size) #PIL built in function 

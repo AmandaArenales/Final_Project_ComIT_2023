@@ -8,8 +8,9 @@
     <!--<h1 class="h3 font-weight-normal form-register-h1">Welcome to the search page</h1>{% csrf_token %}-->
     
     <h2 class="h1 font-weight-normal form-register-h2" >Products</h2>
-
+    <div style="display: flex;flex-wrap: wrap;">
     {% for product in products_distinct %}
         {% include 'list_item.html' %}
     {% endfor %}
+    </div>
 {% endblock %}
