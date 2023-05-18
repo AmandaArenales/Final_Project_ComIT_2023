@@ -2,7 +2,7 @@
 {% block title %}Add product | {% endblock %}
 
 {% block content %}
-    {% if user.is_authenticated and user.is_staff %}
+    {% if user.is_authenticated and user.is_staff and not user.is_superuser %}
 
         <div class="heading">
             Let's add new products here

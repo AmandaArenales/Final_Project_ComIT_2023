@@ -43,7 +43,7 @@
             {% else %}
             
                 <form method="POST" class="form-register">{% csrf_token %}
-                    {{form.as_p}} 
+                    {{ form.as_p }} 
                     <br/>
                     <button class="btn-register" type="submit">Register</button>
                     <br/>

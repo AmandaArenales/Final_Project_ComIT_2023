@@ -36,6 +36,14 @@
                     </tbody>
                 </table>
 
+                <button id="myButton" class="btn-a-p" type="submit">Add product</button>
+        
+                <script type="text/javascript">
+                    document.getElementById("myButton").onclick = function () {
+                        location.href = "{% url 'add_product' %}";
+                    };
+                </script>  
+
             {% else %}
                 <p class="msglogout" style="font-style: italic; color: black;">You don't have any products yet.
                     Would like to add a new product?</p>

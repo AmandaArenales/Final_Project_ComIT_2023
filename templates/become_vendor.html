@@ -54,11 +54,10 @@
                 </div>
 
             <form method="POST" class="messages">{% csrf_token %}    
-                <p>You're not a vendor. Would you like to
-                    become a vendor?</p>
+                <p class="msglogout">You're not a vendor. Would you like to
+                    become a vendor? </br></br>
+                    If yes, please <a href="/logout/">logout</a> and do your registration as a vendor.</p>
             </form>
-
-
 
         {% endif %}
     {% endif %}
