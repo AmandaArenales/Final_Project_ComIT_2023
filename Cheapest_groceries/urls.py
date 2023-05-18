@@ -48,7 +48,7 @@ from vendor.views import (
 )
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls, name='admin'),
     path('add_product/', add_product, name = 'add_product'), #own
     path('become_vendor/', become_vendor, name = 'become_vendor'), #own
     path('vendor_admin/', vendor_admin, name = 'vendor_admin'), #own

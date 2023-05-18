@@ -9,7 +9,7 @@ from vendor.models import Vendor
 def product(request, category_slug, product_slug):
     product = get_object_or_404(Product, category__slug = category_slug, slug = product_slug)
 
-    title = product_slug.split('_')[0].capitalize()
+    #title = product_slug.split('_')[0].capitalize()
     list_products =  Product.objects.filter(title=product).values()
     
     list_id = []
@@ -32,7 +32,7 @@ def product(request, category_slug, product_slug):
     list_final = dict(sorted(list_final.items(), key=operator.itemgetter(1)))
     print(list_final)
 
-    other_products = list(product.category.products.exclude(id=product.id)) 
+    other_products = list(product.category.products.exclude(id=product.id))
 
     if len(other_products) >= 3:
         other_products = random.sample(other_products, 3)

@@ -25,7 +25,8 @@
             <tbody>
                 {% for vendor,price in list_final.items %}
                     <tr class="tr-v-a tr-v-a-h table-fontr">
-                        <td class="th-td-v-a"><a href="{% url 'product' product.category.slug product.slug %}" style="text-decoration: none;">{{ vendor }}</a></td>
+                        <td class="th-td-v-a"><a href="{% url 'product' product.category.slug product.slug %}" 
+                            style="text-decoration: none;">{{ vendor }}</a></td>
                         <td class="th-td-v-a">${{ price }}</td>
                     </tr>
                 {% endfor %}

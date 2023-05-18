@@ -39,9 +39,10 @@
             <div class="menu">
                 <ul id="menu">
                     <li class="commit"><a href="{% url 'home' %}">home</a></li>
-                    <li class="commit"><a href="{% url 'search_page' %}">search page</a></li>
+                    <li class="commit"><a href="{% url 'search_page' %}">search</a></li>
                     <li class="commit"><a href="{% url 'become_vendor' %}">become vendor</a></li>
                     <li class="commit"><a href="{% url 'add_product' %}">add product</a></li>
+                    <li class="commit"><a href="{% url 'admin:index' %}">admin</a></li>
                     <!--{% for category in menu_categories %}
                         <li class="commit"><a href="{% url 'category' category.slug %}" class="box">
                             {{ category.title }}</a></li>
