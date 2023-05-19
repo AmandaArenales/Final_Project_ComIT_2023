@@ -32,7 +32,7 @@ class Product(models.Model):
         ordering = ['-date_added'] #data in descent order
     
     def __str__(self):
-        return self.title
+        return self.title #self.vendor
     
     def get_thumbnail(self):
         if self.thumbnail:
