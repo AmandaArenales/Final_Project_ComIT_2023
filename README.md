@@ -32,5 +32,6 @@ If you wish to run the project locally, follow these steps:
   `python manage.py runserver`
 5. Open your browser and visit `http://localhost:8000` to view the application.
 
+## Presentation
 
-
+[![Cheapest Groceries](https://img.youtube.com/vi/-Galn-uuUJA/0.jpg)](https://youtu.be/-Galn-uuUJA?si=PgcR2pxgiRb6E4Hg)
