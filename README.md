@@ -22,10 +22,14 @@ The project is a web application developed as my capstone project. I used the Dj
 
 If you wish to run the project locally, follow these steps:
 
-1. Clone this repository to your development environment: `git clone https://github.com/AmandaArenales/Final_Project_ComIT_2023.git`
-2. Install the project dependencies using Pipenv: `pipenv install`
-3. Activate the virtual environment:`pipenv shell`
-4. Run the application: `python manage.py runserver`
+1. Clone this repository to your development environment:
+   `git clone https://github.com/AmandaArenales/Final_Project_ComIT_2023.git`
+2. Install the project dependencies using Pipenv: 
+  `pipenv install`
+3. Activate the virtual environment:
+  `pipenv shell`
+4. Run the application: 
+  `python manage.py runserver`
 5. Open your browser and visit `http://localhost:8000` to view the application.
 
 
